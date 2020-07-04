@@ -1,0 +1,43 @@
+﻿@model VidlyStore.ViewModels.MovieFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Add", "Movie"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=> m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReleasedDate)
+        @Html.TextBoxFor(m => m.ReleasedDate, "{0:MM/dd/yyyy }", new { @class = "form-control", @placeHolder = "MM/DD/YYYY" })
+        @Html.ValidationMessageFor(m=> m.ReleasedDate)
+    </div>
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.CreatedOn)
+        @Html.TextBoxFor(m => m.CreatedOn, "{0:MM/dd/yyyy }", new { @class = "form-control" @placeHolder = "MM/DD/YYYY" })
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.GenreId)
+        @Html.DropDownListFor(m => m.GenreId, new SelectList(Model.Genre, "Id", "GenreName"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=> m.GenreId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NoinStock)
+        @Html.TextBoxFor(m => m.NoinStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=> m.NoinStock)
+    </div>
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m=> m.Id)
+    <button class="btn btn-primary" type="submit">Save</button>
+
+}
+
+
+
+

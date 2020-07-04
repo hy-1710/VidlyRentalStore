@@ -1,0 +1,58 @@
+﻿@model VidlyStore.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2 >Movies</h2>
+@if (Model.movie.Count == 0)
+{
+    <p>No Movies</p>
+}
+else
+{
+<table id="Movies" class="table table-bordered table-hover" >
+    <thead>
+        <th>Movie</th>
+        <th>Genre</th>
+       
+    </thead>
+        <tbody>
+            @foreach (var mov in Model.movie)
+            {
+            <tr>
+                <td>
+                    @mov.Name
+                </td>
+                <td>@mov.genre.GenreName</td>
+       
+            </tr>
+            }
+        </tbody>
+</table>
+    
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $("#Movies").dataTable();
+            //$("#Movies").on("click", ".js-delete", function (){
+            //    var button = $(this);
+            //    if (confirm("Are you sure want to delete this record?")) {
+            //        $.ajax({
+            //            url: "/api/movies/" + button.attr("data-movie-id"),
+            //            method: "Delete",
+            //            success: function () {
+            //                table.row(button.parents("tr")).remove().draw();
+            //            }
+
+            //        })
+            //    }
+                
+            //})
+        })
+    </script>
+    
+    }
