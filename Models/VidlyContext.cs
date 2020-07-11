@@ -18,6 +18,8 @@ namespace VidlyStore.Models
         public DbSet<MemberShipType> memberShipTypes { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Rental> Rentals { get; set; }
+        public DbSet<User> usersList{ get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
 
         public VidlyContext()
             : base("DefaultConnection", throwIfV1Schema: false)

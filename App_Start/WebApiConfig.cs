@@ -16,6 +16,8 @@ namespace VidlyStore
             setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
             setting.Formatting = Formatting.Indented;
 
+           
+
             //for route the value
             config.MapHttpAttributeRoutes();
 

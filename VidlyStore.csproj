@@ -195,8 +195,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\AppointmentController.cs" />
     <Compile Include="Controllers\Api\CustomerController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\UserController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -204,11 +206,13 @@
     <Compile Include="Controllers\Api\NewRentalController.cs" />
     <Compile Include="Controllers\RentalController.cs" />
     <Compile Include="Controllers\SweetController.cs" />
+    <Compile Include="Dtos\AppointmentDto.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MemberShipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Dtos\NewRentalDto.cs" />
+    <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,10 +296,20 @@
     <Compile Include="Migrations\202007010929574_Addnoofavailablestock.designer.cs">
       <DependentUpon>202007010929574_Addnoofavailablestock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007110649443_UserAppointmentTable.cs" />
+    <Compile Include="Migrations\202007110649443_UserAppointmentTable.designer.cs">
+      <DependentUpon>202007110649443_UserAppointmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007110841529_updateValidations.cs" />
+    <Compile Include="Migrations\202007110841529_updateValidations.designer.cs">
+      <DependentUpon>202007110841529_updateValidations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Rental.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\VidlyContext.cs" />
@@ -704,6 +718,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007010929574_Addnoofavailablestock.resx">
       <DependentUpon>202007010929574_Addnoofavailablestock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007110649443_UserAppointmentTable.resx">
+      <DependentUpon>202007110649443_UserAppointmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007110841529_updateValidations.resx">
+      <DependentUpon>202007110841529_updateValidations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

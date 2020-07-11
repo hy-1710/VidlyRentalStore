@@ -39,6 +39,7 @@ namespace VidlyStore.Controllers.Api
         }
 
         //GET /api/customers/1
+      
         public IHttpActionResult GetCustomer( int id)
         {
             var customer = _context.customers.SingleOrDefault(c => c.Id == id);

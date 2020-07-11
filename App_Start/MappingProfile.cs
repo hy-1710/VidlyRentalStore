@@ -16,6 +16,8 @@ namespace VidlyStore.App_Start
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MemberShipType, MemberShipTypeDto>();
+            Mapper.CreateMap<User, UserDto>();
+            Mapper.CreateMap<Appointment, AppointmentDto>();
             //Mapper.CreateMap<Rental, NewRentalDto>();
 
             //HTTPPUT throw error 
@@ -23,6 +25,8 @@ namespace VidlyStore.App_Start
             //to redolve which .ForMember clause
             Mapper.CreateMap<CustomerDto, Customer>().ForMember(c => c.Id, opt => opt.Ignore());
             Mapper.CreateMap<MovieDto, Movie>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<UserDto, User>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<AppointmentDto, Appointment>().ForMember(m => m.Id, opt => opt.Ignore());
            // Mapper.CreateMap<MemberShipTypeDto, MemberShipType>();
         }
     }

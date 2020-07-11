@@ -31,7 +31,7 @@ namespace VidlyStore.Controllers
             
             var viewModel = new RandomMovieViewModel()
             {
-                movie = _context.movie.Include(m=> m.genre).ToList()
+                movie = _context.movie.Include(m=> m.Genre).ToList()
                
             };
             if(User.IsInRole(RoleName.CanManageMovies))
